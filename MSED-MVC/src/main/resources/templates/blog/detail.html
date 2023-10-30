@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+<h1> Blog Detail MVC</h1>
+<table style="width:100%; text-align:left;">
+    <tr>
+        <th>#</th>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Content</th>
+        <th>User Name</th>
+    </tr>
+    <!--@thymesVar id="item" type="ch.hslu.cas.msed.mvc.model.MVCBlogDTO"-->
+    <tr>
+        <td>
+            <a th:href="@{/MVC/Blogs/Detail/{Id}(Id=${item.Id})}" th:text="${item.Id}"></a>
+        </td>
+        <td th:text="${item.Image.FileName}"></td>
+        <td th:text="${item.Title}"></td>
+        <td th:text="${item.Description}"></td>
+        <td th:text="${item.Content}"></td>
+        <td th:text="${item.Creator.UserName}"></td>
+    </tr>
+</table>
+</body>
+</html>

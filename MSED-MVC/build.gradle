@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'org.springframework.boot' version '2.6.2'
+    id 'io.reflectoring.spring-boot-devtools' version '0.0.3'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+group = 'ch.hslu.cas.msed.mvc'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compileOnly("org.springframework.boot:spring-boot-devtools")
+    developmentOnly('org.springframework.boot:spring-boot-devtools')
+
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
+}
+
+/*
+tasks.named("compileJava")
+{
+    Task it ->
+        {
+            it.finalizedBy(":MSED-FP:restart")
+        }
+}
+*/
+/*
+bootRun
+{
+    jvmArgs = ["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"]
+    mainClass = "ch.hslu.cas.msed.mom.bootstrap.starters.MOMWebApplication"
+    classpath = sourceSets.main.runtimeClasspath
+}*/

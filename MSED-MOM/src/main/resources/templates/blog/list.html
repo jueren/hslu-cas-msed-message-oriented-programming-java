@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>List</title>
+    </head>
+    <body>
+        <h1> Blog List MOM</h1>
+        <table style="width:100%; text-align:left;">
+            <tr>
+                <th>#</th>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Content</th>
+                <th>UserName</th>
+            </tr>
+            <!--@thymesVar id="items" type="List<ch.hslu.cas.msed.mom.domain.dtos.MOMBlogDTO>"-->
+            <tr th:each=" item, index : ${ items }">
+                <!--@thymesVar id="item" type="ch.hslu.cas.msed.mom.domain.dtos.MOMBlogDTO"-->
+                <td>
+                    <a th:href="@{/MOM/Blogs/Detail/{Id}(Id=${item.Id})}" th:text="${item.Id}"></a>
+                </td>
+                <td th:text="${item.Image.FileName}"></td>
+                <td th:text="${item.Title}"></td>
+                <td th:text="${item.Description}"></td>
+                <td th:text="${item.Content}"></td>
+                <td th:text="${item.Creator.UserName}"></td>
+            </tr>
+        </table>
+    </body>
+</html>
