@@ -1,6 +1,5 @@
 package ch.hslu.cas.msed.mom.domain.services;
 
-import ch.hslu.cas.msed.mom.domain.dtos.MOMAuthDTO;
 import ch.hslu.cas.msed.mom.domain.dtos.MOMBlogDTO;
 import ch.hslu.cas.msed.mom.domain.repositories.MOMBlogRepository;
 import ch.hslu.cas.msed.mom.infrastructure.gateways.MOMMessageBusGateway;
@@ -36,8 +35,6 @@ public class MOMBlogDomainService
         for (MOMBlogDTO item : result)
         {
             // Todo: Add Creator
-            // item.Creator = new MOMAuthDTO(1, "Test", "Test", 1);
-            item.Creator = this.gateway.getUserById(item.CreatedBy);
             // item.Creator = this.authService.getById(item.CreatedBy);
             // Todo: Improve, query multiple items at once
             item.Image = this.gateway.getFileById(item.ImageId);

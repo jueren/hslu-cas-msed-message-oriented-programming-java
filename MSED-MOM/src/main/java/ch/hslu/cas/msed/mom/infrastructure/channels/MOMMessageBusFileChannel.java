@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class MOMMessageBusFileChannel
 {
     @Bean(name = "ch.hslu.cas.msed.mom.filechannel")
-    public MessageChannel FileChannel() {
+    public MessageChannel FileCommandChannel() {
         return new DirectChannel();
     }
 }

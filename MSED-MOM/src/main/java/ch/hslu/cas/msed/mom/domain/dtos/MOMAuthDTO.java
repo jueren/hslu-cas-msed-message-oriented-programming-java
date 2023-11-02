@@ -18,8 +18,6 @@ public class MOMAuthDTO implements Serializable
     public LocalDateTime           ModifiedOn;
     public LocalDateTime           DeletedOn;
 
-    public MOMAuthDTO(){}
-
     public MOMAuthDTO(int Id, String UserName, String Password, int Status)
     {
         this.Id = Id;

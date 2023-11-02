@@ -1,6 +1,5 @@
 package ch.hslu.cas.msed.mom.infrastructure.routers;
 
-import ch.hslu.cas.msed.mom.infrastructure.messages.MOMMessageBusAuthMessage;
 import ch.hslu.cas.msed.mom.infrastructure.messages.MOMMessageBusFileMessage;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.annotation.Router;
@@ -17,10 +16,6 @@ public class MOMMessageBusRouter
         if(message.getPayload() instanceof MOMMessageBusFileMessage)
         {
             return "ch.hslu.cas.msed.mom.filechannel";
-        }
-        else if(message.getPayload() instanceof MOMMessageBusAuthMessage)
-        {
-            return "ch.hslu.cas.msed.mom.authchannel";
         }
         else
         {
