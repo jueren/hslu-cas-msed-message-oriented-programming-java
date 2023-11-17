@@ -26,4 +26,8 @@ public class MOMMessageBusGateway
         MOMMessageBusFileQueryMessage msgResponse = (MOMMessageBusFileQueryMessage) this.bus.send(msg);
         return msgResponse.ResponseDTO;
     }
+
+    // Todo: Implement this.gateway.getUserById();
+    // Todo: Create MOMMessageBusAuthQueryMessage in /infrastructure/messages
+
 }
